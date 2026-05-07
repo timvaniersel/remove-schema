@@ -76,6 +76,22 @@ npx wp-env run cli wp plugin check remove-schema --exclude-directories=original,
 npm run build
 ```
 
+## Export Plugin ZIP
+
+Build assets and create a release ZIP:
+
+```bash
+npm run package:release
+```
+
+Create a ZIP from the current built files without rebuilding assets:
+
+```bash
+npm run package:zip
+```
+
+The generated archive is written to `dist/remove-schema.zip`.
+
 ## Project Metadata
 
 - Slug: `remove-schema`
