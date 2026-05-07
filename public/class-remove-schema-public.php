@@ -41,6 +41,15 @@ class Remove_Schema_Public {
 	private $version;
 
 	/**
+	* Stored plugin options.
+	*
+	* @since    1.0.0
+	* @access   private
+	* @var      array    $remove_schema_options    The saved plugin options.
+	*/
+	private $remove_schema_options;
+
+	/**
 	* Initialize the class and set its properties.
 	*
 	* @since    1.0.0
@@ -52,6 +61,9 @@ class Remove_Schema_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 		$this->remove_schema_options = get_option($this->plugin_name);
+		if ( ! is_array( $this->remove_schema_options ) ) {
+			$this->remove_schema_options = array();
+		}
 
 	}
 public function apply_page_specific_options(){

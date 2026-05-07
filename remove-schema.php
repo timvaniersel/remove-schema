@@ -16,7 +16,7 @@
  * Plugin Name:       Remove Schema
  * Plugin URI:        https://plugin.nl/en/remove-schema-plugin/
  * Description:       Remove all Microdata, RDFa and/or JSON-ld that you don’t want on your page.
- * Version:           1.4
+ * Version:           1.5.0
  * Author:            Plugin.nl
  * Author URI:        https://plugin.nl/en/remove-schema-plugin/
  * License:           GPL-2.0+
@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Currently plugin version.
  */
-define( 'REMOVE_SCHEMA_VERSION', '1.4' );
+define( 'REMOVE_SCHEMA_VERSION', '1.5.0' );
 
 /**
  * The core plugin class that is used to define internationalization,

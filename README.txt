@@ -2,12 +2,12 @@
 Contributors: timvaniersel
 Donate link: https://plugin.nl/en/remove-schema-plugin/
 Tags: schema, schema markup, structured data
-Requires at least: 3.0.1
-Tested up to: 5.4
-Stable tag: trunk
+Requires at least: 5.0.0
+Tested up to: 6.9
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Requires PHP: 5.2.4
+Requires PHP: 5.9.4
 
 Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site.
 
@@ -42,7 +42,7 @@ You can install Remove Schema at the moment only by downloading it from GitHub a
 
 = Can you make add support for a plugin =
 
-Yes we can. If we have missed a plugin please create an issue on [Github](https://github.com/Plugin-nl/remove-schema "Remove Schema Github").
+Yes we can. If we have missed a plugin please create an issue on [Github](https://github.com/timvaniersel/remove-schema "Remove Schema Github").
 
 == Screenshots ==
 
@@ -50,6 +50,9 @@ Yes we can. If we have missed a plugin please create an issue on [Github](https:
 2. Page editor
 
 == Changelog ==
+
+= 1.5 =
+* Add PHP 8.2 support
 
 = 1.4 =
 * Add Yoast SEO Premium support
