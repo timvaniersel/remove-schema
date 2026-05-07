@@ -106,7 +106,7 @@ final class PluginContext {
 	 * @return string
 	 */
 	public function option_name(): string {
-		return 'remove_schema_options';
+		return 'remove-schema';
 	}
 
 	/**

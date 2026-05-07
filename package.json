@@ -1,6 +1,6 @@
 {
   "name": "remove-schema",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "description": "Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site.",
   "license": "GPL-2.0-or-later",
   "engines": {
@@ -20,11 +20,8 @@
     "vendor"
   ],
   "scripts": {
-    "build": "npm run clean && npm run build:admin && npm run build:public && npm run build:blocks && npm run build:modules",
+    "build": "npm run clean && npm run build:admin",
     "build:admin": "wp-scripts build assets/src/admin/index.js --output-path=assets/build/admin",
-    "build:public": "wp-scripts build assets/src/public/index.js --output-path=assets/build/public",
-    "build:blocks": "wp-scripts build --source-path=assets/src/blocks --output-path=assets/build/blocks --blocks-manifest",
-    "build:modules": "node bin/copy-modules.mjs",
     "clean": "node bin/clean.mjs",
     "env:start": "wp-env start",
     "env:stop": "wp-env stop",
@@ -33,19 +30,11 @@
     "lint:js": "wp-scripts lint-js assets/src",
     "package:release": "npm run build && npm run package:zip",
     "package:zip": "wp-scripts plugin-zip --root-folder=remove-schema && node bin/finalize-plugin-zip.mjs",
-    "start": "npm-run-all --parallel start:admin start:public start:blocks",
-    "start:admin": "wp-scripts start assets/src/admin/index.js --output-path=assets/build/admin",
-    "start:public": "wp-scripts start assets/src/public/index.js --output-path=assets/build/public",
-    "start:blocks": "wp-scripts start --source-path=assets/src/blocks --output-path=assets/build/blocks",
-    "test:js": "wp-scripts test-unit-js"
+    "start": "wp-scripts start assets/src/admin/index.js --output-path=assets/build/admin"
   },
   "devDependencies": {
-    "@wordpress/block-editor": "^15.17.0",
-    "@wordpress/blocks": "^15.17.0",
     "@wordpress/env": "^11.4.0",
-    "@wordpress/i18n": "^6.17.0",
-    "@wordpress/scripts": "^32.0.0",
-    "npm-run-all": "^4.1.5"
+    "@wordpress/scripts": "^32.0.0"
   },
   "homepage": "https://plugin.nl/remove-schema",
   "author": {

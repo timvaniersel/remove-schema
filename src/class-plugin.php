@@ -10,14 +10,12 @@ declare(strict_types=1);
 namespace TimVanIersel\RemoveSchema;
 
 use TimVanIersel\RemoveSchema\Admin\AdminAssets;
+use TimVanIersel\RemoveSchema\Admin\PostEditor;
 use TimVanIersel\RemoveSchema\Admin\SettingsPage;
-use TimVanIersel\RemoveSchema\Api\Routes;
-use TimVanIersel\RemoveSchema\Blocks\BlockRegistrar;
-use TimVanIersel\RemoveSchema\Cli\CliRegistrar;
 use TimVanIersel\RemoveSchema\Contracts\Service;
 use TimVanIersel\RemoveSchema\Infrastructure\AssetLocator;
-use TimVanIersel\RemoveSchema\Modules\ScriptModuleRegistrar;
-use TimVanIersel\RemoveSchema\PublicSite\PublicAssets;
+use TimVanIersel\RemoveSchema\PublicSite\SchemaRemoval;
+use TimVanIersel\RemoveSchema\Schema\MarkupCleaner;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -77,12 +75,9 @@ final class Plugin {
 	private function services(): array {
 		return array(
 			new SettingsPage( $this->context ),
+			new PostEditor( $this->context ),
 			new AdminAssets( $this->assets ),
-			new PublicAssets( $this->assets ),
-			new Routes( $this->context ),
-			new CliRegistrar( $this->context ),
-			new BlockRegistrar( $this->context, $this->assets ),
-			new ScriptModuleRegistrar( $this->context, $this->assets ),
+			new SchemaRemoval( $this->context, new MarkupCleaner() ),
 		);
 	}
 }

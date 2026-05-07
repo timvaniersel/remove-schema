@@ -36,6 +36,6 @@ final class PluginContextTest extends TestCase {
 			'https://example.com/wp-content/plugins/remove-schema/assets/build/admin/index.js',
 			$context->build_url( 'admin/index.js' )
 		);
-		self::assertSame( 'remove_schema_options', $context->option_name() );
+		self::assertSame( 'remove-schema', $context->option_name() );
 	}
 }

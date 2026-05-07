@@ -20,6 +20,62 @@ npm run build
 
 The plugin entrypoint is `remove-schema.php`. Runtime services live in `src/`.
 
+## Testing and Verification
+
+Run the PHP test suite:
+
+```bash
+composer test
+```
+
+Run PHP coding standards and static analysis:
+
+```bash
+composer lint
+```
+
+Run the PHP checks individually:
+
+```bash
+composer phpcs
+composer phpstan
+composer phpunit
+```
+
+Run JavaScript and CSS linting:
+
+```bash
+npm run lint:js
+npm run lint:css
+```
+
+Run WordPress Plugin Check in the local wp-env environment:
+
+```bash
+npm run env:start
+npx wp-env run cli wp plugin install plugin-check --activate
+npx wp-env run cli wp plugin check remove-schema --exclude-directories=original,.phpstan,.phpunit.cache --exclude-files=.DS_Store,.gitignore,phpstan.neon.dist,phpcs.xml.dist,phpunit.xml.dist
+```
+
+Build assets as part of release verification:
+
+```bash
+npm run build
+```
+
+Full local verification:
+
+```bash
+composer test
+composer lint
+npm run lint:js
+npm run lint:css
+npm run env:start
+npx wp-env run cli wp plugin install plugin-check --activate
+npx wp-env run cli wp plugin check remove-schema --exclude-directories=original,.phpstan,.phpunit.cache --exclude-files=.DS_Store,.gitignore,phpstan.neon.dist,phpcs.xml.dist,phpunit.xml.dist
+npm run build
+```
+
 ## Project Metadata
 
 - Slug: `remove-schema`
@@ -27,8 +83,6 @@ The plugin entrypoint is `remove-schema.php`. Runtime services live in `src/`.
 - Prefix: `remove_schema`
 - Text domain: `remove-schema`
 - Composer package: `timvaniersel/removeschema`
-- REST namespace: `remove-schema/v1`
-- WP-CLI command slug: `remove-schema`
 - Plugin URI: https://plugin.nl/remove-schema
 
 ## Author
@@ -41,4 +95,4 @@ The plugin entrypoint is `remove-schema.php`. Runtime services live in `src/`.
 
 1. Install PHP dependencies with `composer install`.
 2. Install JavaScript dependencies with `npm install`.
-3. Build the starter assets with `npm run build`.
+3. Build the admin assets with `npm run build`.

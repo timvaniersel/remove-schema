@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace TimVanIersel\RemoveSchema\Lifecycle;
 
+use TimVanIersel\RemoveSchema\Options\SchemaOptions;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -23,7 +25,7 @@ final class Uninstaller {
 	 * @return void
 	 */
 	public static function uninstall(): void {
-		delete_option( 'remove_schema_options' );
+		delete_option( SchemaOptions::OPTION_NAME );
 		delete_option( 'remove_schema_version' );
 	}
 }

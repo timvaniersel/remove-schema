@@ -1,4 +1,11 @@
-.remove-schema-admin__field {
-	border-color: #1d4ed8;
-	box-shadow: 0 0 0 1px rgba(29, 78, 216, 0.15);
+.remove-schema-metaboxes fieldset {
+	margin: 0 0 12px;
+}
+
+.remove-schema-post-options.is-disabled {
+	opacity: 0.5;
+}
+
+.text-red {
+	color: #dc3232;
 }

@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace TimVanIersel\RemoveSchema\Lifecycle;
 
+use TimVanIersel\RemoveSchema\Options\SchemaOptions;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -25,12 +27,10 @@ final class Activator {
 	public static function activate(): void {
 		update_option( 'remove_schema_version', REMOVE_SCHEMA_VERSION );
 
-		if ( false === get_option( 'remove_schema_options', false ) ) {
+		if ( false === get_option( SchemaOptions::OPTION_NAME, false ) ) {
 			add_option(
-				'remove_schema_options',
-				array(
-					'message' => __( 'Hello from the modern boilerplate.', 'remove-schema' ),
-				)
+				SchemaOptions::OPTION_NAME,
+				SchemaOptions::normalize_site_options( array() )
 			);
 		}
 

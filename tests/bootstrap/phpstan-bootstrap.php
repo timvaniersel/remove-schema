@@ -24,7 +24,7 @@ if ( ! function_exists( 'plugin_basename' ) ) {
 }
 
 if ( ! defined( 'REMOVE_SCHEMA_VERSION' ) ) {
-	define( 'REMOVE_SCHEMA_VERSION', '0.1.0' );
+	define( 'REMOVE_SCHEMA_VERSION', '2.0.0' );
 }
 
 if ( ! defined( 'REMOVE_SCHEMA_FILE' ) ) {
@@ -38,6 +38,3 @@ if ( ! defined( 'REMOVE_SCHEMA_PATH' ) ) {
 if ( ! defined( 'REMOVE_SCHEMA_URL' ) ) {
 	define( 'REMOVE_SCHEMA_URL', 'http://example.com/wp-content/plugins/remove-schema/' );
 }
-
-require_once __DIR__ . '/phpstan-wp-cli-command-stub.php';
-require_once __DIR__ . '/phpstan-wp-cli-stub.php';
