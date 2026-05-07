@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ruleset name="Remove Schema">
+	<description>PHPCS rules for the modern WordPress plugin boilerplate.</description>
+
+	<file>remove-schema.php</file>
+	<file>uninstall.php</file>
+	<file>src</file>
+	<file>tests</file>
+
+	<exclude-pattern>vendor/*</exclude-pattern>
+	<exclude-pattern>tests/bootstrap/phpstan-*.php</exclude-pattern>
+
+	<rule ref="WordPress.Files.FileName">
+		<exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+	<arg name="basepath" value="."/>
+	<arg name="extensions" value="php"/>
+	<arg name="parallel" value="4"/>
+	<arg value="sp"/>
+
+	<config name="minimum_supported_wp_version" value="6.8"/>
+	<config name="testVersion" value="8.2-"/>
+
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Docs"/>
+	<rule ref="WordPress-Extra"/>
+	<rule ref="PHPCompatibilityWP"/>
+	<rule ref="VariableAnalysis"/>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="remove_schema"/>
+				<element value="TimVanIersel\RemoveSchema"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

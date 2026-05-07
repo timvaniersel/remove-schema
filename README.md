@@ -1,35 +1,44 @@
-# Remove Schema WordPress Plugin
+# Remove Schema
 
-Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site. You can use this plugin on site level and/or on page level.
+Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site.
 
-## Remove Schema
+## Requirements
 
-Remove Schema optionally removes all schema markup from your website.
+- WordPress `6.8+`
+- PHP `8.2+`
+- Node.js `20+`
+- npm `10+`
+- Composer `2+`
 
-You have the option to remove:
+## Quick Start
 
-* All JSON-ld
-* All Microdata
-* All RDFa
+```bash
+composer install
+npm install
+npm run build
+```
 
-And remove plugin/theme specific markup:
+The plugin entrypoint is `remove-schema.php`. Runtime services live in `src/`.
 
-* WooCommerce
-* WooCommerce emails
-* Yoast SEO
-* Schema Pro
-* GeneratePress themes
+## Project Metadata
 
+- Slug: `remove-schema`
+- Namespace: `TimVanIersel\RemoveSchema`
+- Prefix: `remove_schema`
+- Text domain: `remove-schema`
+- Composer package: `timvaniersel/removeschema`
+- REST namespace: `remove-schema/v1`
+- WP-CLI command slug: `remove-schema`
+- Plugin URI: https://plugin.nl/remove-schema
 
-## Installation
+## Author
 
-You can install Remove Schema at the moment only by downloading it from GitHub and uploading it to your WordPress site:
+- Name: Tim van Iersel
+- Email: tim@plugin.nl
+- URI: https://plugin.nl
 
-1. Upload `remove-schema` directory to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Go to settings and check the boxes of the schema markup that you want removed.
+## Next Steps
 
-## Frequently Asked Questions
-
-#### Can you add support for a plugin?
-Yes we can, If we have missed a plugin please [create an issue on Github](https://github.com/pluginnl/remove-schema/issues "Remove Schema Github").
+1. Install PHP dependencies with `composer install`.
+2. Install JavaScript dependencies with `npm install`.
+3. Build the starter assets with `npm run build`.
