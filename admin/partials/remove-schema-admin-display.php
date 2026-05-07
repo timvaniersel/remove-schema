@@ -94,7 +94,7 @@
           <?php if ( pluginnl_plugin_is_active( 'woocommerce/woocommerce.php' ) ) { ?>
           <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Remove WooCommerce JsonLD', $this->plugin_name); ?></span></legend>
-            <label for="<?php echo esc_attr($this->plugin_name); ?>-yoast-json-ld">
+            <label for="<?php echo esc_attr($this->plugin_name); ?>-woocommerce-json-ld">
               <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-woocommerce-json-ld" name="<?php echo esc_attr($this->plugin_name); ?>[woocommerce_jsonld]" value="1" <?php checked($woocommerce_jsonld, 1); ?> />
               <span><?php esc_attr_e('Remove WooCommerce JSON-LD', $this->plugin_name); ?></span>
             </label>
