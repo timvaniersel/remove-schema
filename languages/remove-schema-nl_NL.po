@@ -1,0 +1,203 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Remove Schema\n"
+"POT-Creation-Date: 2020-04-12 14:09+0200\n"
+"PO-Revision-Date: 2020-04-12 14:29+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: remove-schema.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/class-remove-schema-admin.php:104
+msgid "Settings"
+msgstr "Instellingen"
+
+#: admin/partials/remove-schema-admin-display.php:22
+msgid ""
+"Select the Schema that you want to remove from your website. For more "
+"information about Schema visit"
+msgstr ""
+"Selecteer het schema dat u van uw website wilt verwijderen. Voor meer "
+"informatie over Schema ga naar"
+
+#: admin/partials/remove-schema-admin-display.php:25
+#: admin/partials/remove-schema-admin-display.php:69
+msgid "Plugin/Theme schema removal"
+msgstr "Plugin/Thema schema verwijderen"
+
+#: admin/partials/remove-schema-admin-display.php:26
+#: admin/partials/remove-schema-admin-display.php:139
+msgid "Aggressive schema removal"
+msgstr "Agressieve schema-verwijdering"
+
+#: admin/partials/remove-schema-admin-display.php:74
+#: admin/partials/remove-schema-admin-display.php:77
+#: admin/partials/remove-schema-post-editor-display.php:52
+msgid "Remove Yoast JSON-LD"
+msgstr "Verwijder Yoast JSON-LD"
+
+#: admin/partials/remove-schema-admin-display.php:85
+msgid "Remove WooCommerce JsonLD"
+msgstr "Verwijder WooCommerce JSON-LD"
+
+#: admin/partials/remove-schema-admin-display.php:88
+#: admin/partials/remove-schema-post-editor-display.php:57
+msgid "Remove WooCommerce JSON-LD"
+msgstr "Verwijder WooCommerce JSON-LD"
+
+#: admin/partials/remove-schema-admin-display.php:96
+msgid "Remove WooCommerce JsonLD in Emails"
+msgstr "Verwijder WooCommerce JsonLD in e-mails"
+
+#: admin/partials/remove-schema-admin-display.php:99
+msgid "Remove WooCommerce JSON-LD in Emails"
+msgstr "Verwijder WooCommerce JSON-LD in e-mails"
+
+#: admin/partials/remove-schema-admin-display.php:107
+#: admin/partials/remove-schema-admin-display.php:110
+#: admin/partials/remove-schema-post-editor-display.php:62
+msgid "Remove Schema pro JSON-LD"
+msgstr "Schema pro JSON-LD verwijderen"
+
+#: admin/partials/remove-schema-admin-display.php:117
+#: admin/partials/remove-schema-admin-display.php:120
+msgid "Remove GeneratePress schema"
+msgstr "GeneratePress-schema verwijderen"
+
+#: admin/partials/remove-schema-admin-display.php:127
+msgid "Remove hentry schema"
+msgstr "Hentry schema verwijderen"
+
+#: admin/partials/remove-schema-admin-display.php:130
+msgid "Remove Hentry schema"
+msgstr "Hentry schema verwijderen"
+
+#: admin/partials/remove-schema-admin-display.php:143
+#: admin/partials/remove-schema-admin-display.php:146
+#: admin/partials/remove-schema-post-editor-display.php:48
+msgid "Remove all JSON-LD"
+msgstr "Verwijder alle JSON-LD"
+
+#: admin/partials/remove-schema-admin-display.php:153
+#: admin/partials/remove-schema-admin-display.php:156
+#: admin/partials/remove-schema-post-editor-display.php:66
+msgid "Remove all Microdata"
+msgstr "Verwijder alle Microdata"
+
+#: admin/partials/remove-schema-admin-display.php:162
+#: admin/partials/remove-schema-admin-display.php:165
+#: admin/partials/remove-schema-post-editor-display.php:69
+msgid "Remove all RDFa"
+msgstr "Verwijder alle RDFa schema markup"
+
+#: admin/partials/remove-schema-admin-display.php:171
+msgid "Save all changes"
+msgstr "Alle wijzigingen opslaan"
+
+#: admin/partials/remove-schema-post-editor-display.php:42
+msgid "Turn off remove schema on this page"
+msgstr "Schakel schema verwijderen op deze pagina uit"
+
+#: includes/class-remove-schema-plugin-review.php:68
+#, php-format
+msgid "%s years"
+msgstr "%s jaar"
+
+#: includes/class-remove-schema-plugin-review.php:70
+msgid "a year"
+msgstr "een jaar"
+
+#: includes/class-remove-schema-plugin-review.php:76
+#, php-format
+msgid "%s weeks"
+msgstr "%s weken"
+
+#: includes/class-remove-schema-plugin-review.php:78
+msgid "a week"
+msgstr "een week"
+
+#: includes/class-remove-schema-plugin-review.php:84
+#, php-format
+msgid "%s days"
+msgstr "%s dagen"
+
+#: includes/class-remove-schema-plugin-review.php:86
+msgid "a day"
+msgstr "een dag"
+
+#: includes/class-remove-schema-plugin-review.php:92
+#, php-format
+msgid "%s hours"
+msgstr "%s uren"
+
+#: includes/class-remove-schema-plugin-review.php:94
+msgid "an hour"
+msgstr "een uur"
+
+#: includes/class-remove-schema-plugin-review.php:100
+#, php-format
+msgid "%s minutes"
+msgstr "%s minuten"
+
+#: includes/class-remove-schema-plugin-review.php:102
+msgid "a minute"
+msgstr "een minuut"
+
+#: includes/class-remove-schema-plugin-review.php:108
+#, php-format
+msgid "%s seconds"
+msgstr "%s seconden"
+
+#: includes/class-remove-schema-plugin-review.php:110
+msgid "a second"
+msgstr "een seconde"
+
+#: includes/class-remove-schema-plugin-review.php:151
+#, php-format
+msgid ""
+"You have been using the %s plugin for %s now, do you like it? If so, please "
+"leave us a review with your feedback!"
+msgstr ""
+"Je hebt de %s plugin nu voor %s gebruikt, vind je het leuk? Zo ja, laat ons "
+"dan een recensie achter met jouw feedback!"
+
+#: includes/class-remove-schema-plugin-review.php:153
+msgid "Leave A Review"
+msgstr "Laat een recensie achter"
+
+#: includes/class-remove-schema-plugin-review.php:155
+msgid "No thanks."
+msgstr "Nee bedankt."
+
+#. Plugin Name of the plugin/theme
+msgid "Remove Schema"
+msgstr "Schema markup verwijderen"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://plugin.nl/en/remove-schema-plugin/"
+msgstr "https://plugin.nl/remove-schema-plugin/"
+
+#. Description of the plugin/theme
+msgid ""
+"Remove all Microdata, RDFa and/or JSON-ld that you don’t want on your page."
+msgstr ""
+"Verwijder alle Microdata, RDFa en/of JSON-ld schema markup die je niet op "
+"jouw pagina of website wilt hebben."
+
+#. Author of the plugin/theme
+msgid "Plugin.nl"
+msgstr "Plugin.nl"
