@@ -18,16 +18,18 @@
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 //Grab all options
 $options = get_post_meta(get_the_ID(), 'remove_schema_page_specific', true);
-if (empty($options)) {
-  $options = array();
-  $options['keep_schema'] = false;
-  $options['rm_jsonld'] = false;
-  $options['yoast_jsonld'] = false;
-  $options['woocommerce_jsonld'] = false;
-  $options['schema_pro'] = false;
-  $options['microdata'] = false;
-  $options['rdfa'] = false;
-}
+$options = wp_parse_args(
+  is_array($options) ? $options : array(),
+  array(
+    'keep_schema' => false,
+    'rm_jsonld' => false,
+    'yoast_jsonld' => false,
+    'woocommerce_jsonld' => false,
+    'schema_pro' => false,
+    'microdata' => false,
+    'rdfa' => false,
+  )
+);
 $keep_schema = $options['keep_schema'];
 $rm_jsonld = $options['rm_jsonld'];
 $yoast_jsonld = $options['yoast_jsonld'];

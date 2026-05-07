@@ -32,6 +32,20 @@
 
     //Grab all options
     $options = get_option($this->plugin_name);
+    $options = wp_parse_args(
+      is_array($options) ? $options : array(),
+      array(
+        'rm_jsonld' => 0,
+        'yoast_jsonld' => 0,
+        'woocommerce_jsonld' => 0,
+        'woocommerce_mail_jsonld' => 0,
+        'schema_pro' => 0,
+        'microdata' => 0,
+        'rdfa' => 0,
+        'generatepress_schema' => 0,
+        'remove_hentry_schema' => 0,
+      )
+    );
 
     // Schema
     $rm_jsonld = $options['rm_jsonld'];
