@@ -42,7 +42,7 @@ You can install Remove Schema at the moment only by downloading it from GitHub a
 
 = Can you make add support for a plugin =
 
-Yes we can. If we have missed a plugin please create an issue on [Github](https://github.com/Plugin-nl/remove-schema "Remove Schema Github").
+Yes we can. If we have missed a plugin please create an issue on [GitHub](https://github.com/Plugin-nl/remove-schema "Remove Schema GitHub").
 
 
 == Screenshots ==
