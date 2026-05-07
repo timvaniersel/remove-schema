@@ -102,14 +102,14 @@ public function apply_page_specific_options(){
 
 	// Remove all Woocommerce JsonLD
 	public function remove_schema_woocommerce_jsonld() {
-		if(!empty($this->remove_schema_options['woocommerce_jsonld']) && class_exists( 'WooCommerce' )){
+		if(!empty($this->remove_schema_options['woocommerce_jsonld']) && class_exists( 'WooCommerce' ) && function_exists( 'WC' )){
 			remove_action( 'wp_footer', array( WC()->structured_data, 'output_structured_data' ), 10 ); // This removes structured data from all frontend pages
 		}
 	}
 
 	// Remove all Woocommerce JsonLD in the mail
 	public function remove_schema_woocommerce_mail_jsonld() {
-		if(!empty($this->remove_schema_options['woocommerce_mail_jsonld']) && class_exists( 'WooCommerce' )){
+		if(!empty($this->remove_schema_options['woocommerce_mail_jsonld']) && class_exists( 'WooCommerce' ) && function_exists( 'WC' )){
 			remove_action( 'woocommerce_email_order_details', array( WC()->structured_data, 'output_email_structured_data' ), 30 ); // This removes structured data from all Emails sent by WooCommerce
 		}
 	}
