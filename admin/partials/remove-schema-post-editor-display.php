@@ -54,34 +54,34 @@ function pluginnl_plugin_is_active( $pluginpath ){
 <input class="hidden" style="display:none;" type="text" id="<?php echo esc_attr($this->plugin_name); ?>-fake-field" name="<?php echo esc_attr($this->plugin_name); ?>[fake_field]" value="1" />
 
 <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-keep-schema" name="<?php echo esc_attr($this->plugin_name); ?>[keep_schema]" value="1" <?php checked($keep_schema, 1); ?> />
-<b><?php esc_attr_e('Turn off remove schema on this page', $this->plugin_name); ?></b></br>
+<b><?php esc_attr_e('Turn off remove schema on this page', $this->plugin_name); ?></b><br/>
 
 <?php if ($keep_schema): ?>
   <span style="opacity: 0.5">
 <?php endif; ?>
 <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-rm-json-ld" name="<?php echo esc_attr($this->plugin_name); ?>[rm_jsonld]" value="1" <?php checked($rm_jsonld, 1); ?> />
-<?php esc_attr_e('Remove all JSON-LD', $this->plugin_name); ?></br>
+<?php esc_attr_e('Remove all JSON-LD', $this->plugin_name); ?><br/>
 
 <?php if (pluginnl_plugin_is_active( 'wordpress-seo/wp-seo.php') || pluginnl_plugin_is_active('wordpress-seo-premium/wp-seo-premium.php') ) { ?>
 <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-yoast-json-ld" name="<?php echo esc_attr($this->plugin_name); ?>[yoast_jsonld]" value="1" <?php checked($yoast_jsonld, 1); ?> />
-<?php esc_attr_e('Remove Yoast JSON-LD', $this->plugin_name); ?></br>
+<?php esc_attr_e('Remove Yoast JSON-LD', $this->plugin_name); ?><br/>
 <?php } ?>
 
 <?php if ( pluginnl_plugin_is_active( 'woocommerce/woocommerce.php' ) ) { ?>
 <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-woocommerce-json-ld" name="<?php echo esc_attr($this->plugin_name); ?>[woocommerce_jsonld]" value="1" <?php checked($woocommerce_jsonld, 1); ?> />
-<?php esc_attr_e('Remove WooCommerce JSON-LD', $this->plugin_name); ?></br>
+<?php esc_attr_e('Remove WooCommerce JSON-LD', $this->plugin_name); ?><br/>
 <?php } ?>
 
 <?php if ( pluginnl_plugin_is_active( 'wp-schema-pro/wp-schema-pro.php' ) ) { ?>
 <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-schema-pro" name="<?php echo esc_attr($this->plugin_name); ?>[schema_pro]" value="1" <?php checked($schema_pro, 1); ?> />
-<?php esc_attr_e('Remove Schema pro JSON-LD', $this->plugin_name); ?></br>
+<?php esc_attr_e('Remove Schema pro JSON-LD', $this->plugin_name); ?><br/>
 <?php } ?>
 
 <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-microdata" name="<?php echo esc_attr($this->plugin_name); ?>[microdata]" value="1" <?php checked($microdata, 1); ?> />
-<?php esc_attr_e('Remove all Microdata', $this->plugin_name); ?></br>
+<?php esc_attr_e('Remove all Microdata', $this->plugin_name); ?><br/>
 
 <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-rdfa" name="<?php echo esc_attr($this->plugin_name); ?>[rdfa]" value="1" <?php checked($rdfa, 1); ?> />
-<?php esc_attr_e('Remove all RDFa', $this->plugin_name); ?></br>
+<?php esc_attr_e('Remove all RDFa', $this->plugin_name); ?><br/>
 <br>
 <?php if ($keep_schema): ?>
   </span>
