@@ -3,6 +3,7 @@
 .github
 .gitignore
 .phpunit.result.cache
+.phpunit.cache/
 .wp-env.json
 assets/src
 bin
