@@ -53,21 +53,7 @@ class Remove_Schema_Admin {
 		$this->version = $version;
 
 	}
-	public function pluginnl_plugin_is_active( $pluginpath ){
-	 if ( is_multisite() ) {
 
-			if ( is_plugin_active_for_network( plugin_basename(__FILE__) ) ) {
-				$active = is_plugin_active_for_network( $pluginpath ) ? false : true;
-
-			} else {
-				$active = is_plugin_active( $pluginpath )  ? false : true;
-			}
-
-		} else {
-			$active =  is_plugin_active( $pluginpath ) ? false : true;
-		}
-	return $active;
-	}
 	/**
 	* Register the stylesheets for the admin area.
 	*

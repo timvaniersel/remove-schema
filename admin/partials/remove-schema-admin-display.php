@@ -32,6 +32,20 @@
 
     //Grab all options
     $options = get_option($this->plugin_name);
+    $options = wp_parse_args(
+      is_array($options) ? $options : array(),
+      array(
+        'rm_jsonld' => 0,
+        'yoast_jsonld' => 0,
+        'woocommerce_jsonld' => 0,
+        'woocommerce_mail_jsonld' => 0,
+        'schema_pro' => 0,
+        'microdata' => 0,
+        'rdfa' => 0,
+        'generatepress_schema' => 0,
+        'remove_hentry_schema' => 0,
+      )
+    );
 
     // Schema
     $rm_jsonld = $options['rm_jsonld'];
@@ -69,8 +83,8 @@
           <?php if (pluginnl_plugin_is_active( 'wordpress-seo/wp-seo.php') || pluginnl_plugin_is_active('wordpress-seo-premium/wp-seo-premium.php') ) { ?>
           <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Remove Yoast JSON-LD', $this->plugin_name); ?></span></legend>
-            <label for="<?php echo $this->plugin_name; ?>-yoast-json-ld">
-              <input type="checkbox" id="<?php echo $this->plugin_name; ?>-yoast-json-ld" name="<?php echo $this->plugin_name; ?>[yoast_jsonld]" value="1" <?php checked($yoast_jsonld, 1); ?> />
+            <label for="<?php echo esc_attr($this->plugin_name); ?>-yoast-json-ld">
+              <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-yoast-json-ld" name="<?php echo esc_attr($this->plugin_name); ?>[yoast_jsonld]" value="1" <?php checked($yoast_jsonld, 1); ?> />
               <span><?php esc_attr_e('Remove Yoast JSON-LD', $this->plugin_name); ?></span>
             </label>
           </fieldset>
@@ -80,8 +94,8 @@
           <?php if ( pluginnl_plugin_is_active( 'woocommerce/woocommerce.php' ) ) { ?>
           <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Remove WooCommerce JsonLD', $this->plugin_name); ?></span></legend>
-            <label for="<?php echo $this->plugin_name; ?>-yoast-json-ld">
-              <input type="checkbox" id="<?php echo $this->plugin_name; ?>-woocommerce-json-ld" name="<?php echo $this->plugin_name; ?>[woocommerce_jsonld]" value="1" <?php checked($woocommerce_jsonld, 1); ?> />
+            <label for="<?php echo esc_attr($this->plugin_name); ?>-woocommerce-json-ld">
+              <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-woocommerce-json-ld" name="<?php echo esc_attr($this->plugin_name); ?>[woocommerce_jsonld]" value="1" <?php checked($woocommerce_jsonld, 1); ?> />
               <span><?php esc_attr_e('Remove WooCommerce JSON-LD', $this->plugin_name); ?></span>
             </label>
           </fieldset>
@@ -91,8 +105,8 @@
           <?php if ( pluginnl_plugin_is_active( 'woocommerce/woocommerce.php' ) ) { ?>
           <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Remove WooCommerce JsonLD in Emails', $this->plugin_name); ?></span></legend>
-            <label for="<?php echo $this->plugin_name; ?>-woocommerce-mail-json-ld">
-              <input type="checkbox" id="<?php echo $this->plugin_name; ?>-woocommerce-mail-json-ld" name="<?php echo $this->plugin_name; ?>[woocommerce_mail_jsonld]" value="1" <?php checked($woocommerce_mail_jsonld, 1); ?> />
+            <label for="<?php echo esc_attr($this->plugin_name); ?>-woocommerce-mail-json-ld">
+              <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-woocommerce-mail-json-ld" name="<?php echo esc_attr($this->plugin_name); ?>[woocommerce_mail_jsonld]" value="1" <?php checked($woocommerce_mail_jsonld, 1); ?> />
               <span><?php esc_attr_e('Remove WooCommerce JSON-LD in Emails', $this->plugin_name); ?></span>
             </label>
           </fieldset>
@@ -102,8 +116,8 @@
           <?php if ( pluginnl_plugin_is_active( 'wp-schema-pro/wp-schema-pro.php' ) ) { ?>
           <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Remove Schema pro JSON-LD', $this->plugin_name); ?></span></legend>
-            <label for="<?php echo $this->plugin_name; ?>-schema-pro">
-              <input type="checkbox" id="<?php echo $this->plugin_name; ?>-schema-pro" name="<?php echo $this->plugin_name; ?>[schema_pro]" value="1" <?php checked($schema_pro, 1); ?> />
+            <label for="<?php echo esc_attr($this->plugin_name); ?>-schema-pro">
+              <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-schema-pro" name="<?php echo esc_attr($this->plugin_name); ?>[schema_pro]" value="1" <?php checked($schema_pro, 1); ?> />
               <span><?php esc_attr_e('Remove Schema pro JSON-LD', $this->plugin_name); ?></span>
             </label>
           </fieldset>
@@ -112,8 +126,8 @@
           <!-- Remove schema GeneratePress -->
           <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Remove GeneratePress schema', $this->plugin_name); ?></span></legend>
-            <label for="<?php echo $this->plugin_name; ?>-generatepress">
-              <input type="checkbox" id="<?php echo $this->plugin_name; ?>-generatepress" name="<?php echo $this->plugin_name; ?>[generatepress_schema]" value="1" <?php checked($generatepress_schema, 1); ?> />
+            <label for="<?php echo esc_attr($this->plugin_name); ?>-generatepress">
+              <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-generatepress" name="<?php echo esc_attr($this->plugin_name); ?>[generatepress_schema]" value="1" <?php checked($generatepress_schema, 1); ?> />
               <span><?php esc_attr_e('Remove GeneratePress schema', $this->plugin_name); ?></span>
             </label>
           </fieldset>
@@ -122,8 +136,8 @@
           <!-- Remove schema hentry -->
           <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Remove hentry schema', $this->plugin_name); ?></span></legend>
-            <label for="<?php echo $this->plugin_name; ?>-hentry-schema">
-              <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hentry-schema" name="<?php echo $this->plugin_name; ?>[remove_hentry_schema]" value="1" <?php checked($remove_hentry_schema, 1); ?> />
+            <label for="<?php echo esc_attr($this->plugin_name); ?>-hentry-schema">
+              <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-hentry-schema" name="<?php echo esc_attr($this->plugin_name); ?>[remove_hentry_schema]" value="1" <?php checked($remove_hentry_schema, 1); ?> />
               <span><?php esc_attr_e('Remove Hentry schema', $this->plugin_name); ?></span>
             </label>
           </fieldset>
@@ -138,8 +152,8 @@
       <!-- remove all JSONLD -->
       <fieldset>
         <legend class="screen-reader-text"><span><?php _e('Remove all JSON-LD', $this->plugin_name);?></span></legend>
-        <label for="<?php echo $this->plugin_name; ?>-rm-json-ld">
-          <input type="checkbox" id="<?php echo $this->plugin_name; ?>-rm-json-ld" name="<?php echo $this->plugin_name; ?>[rm_jsonld]" value="1" <?php checked($rm_jsonld, 1); ?> />
+        <label for="<?php echo esc_attr($this->plugin_name); ?>-rm-json-ld">
+          <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-rm-json-ld" name="<?php echo esc_attr($this->plugin_name); ?>[rm_jsonld]" value="1" <?php checked($rm_jsonld, 1); ?> />
           <span><?php esc_attr_e('Remove all JSON-LD', $this->plugin_name); ?></span>
         </label>
 
@@ -148,8 +162,8 @@
       <!-- Remove all Microdata -->
       <fieldset>
         <legend class="screen-reader-text"><span><?php _e('Remove all Microdata', $this->plugin_name); ?></span></legend>
-        <label for="<?php echo $this->plugin_name; ?>-microdata">
-          <input type="checkbox" id="<?php echo $this->plugin_name; ?>-microdata" name="<?php echo $this->plugin_name; ?>[microdata]" value="1" <?php checked($microdata, 1); ?> />
+        <label for="<?php echo esc_attr($this->plugin_name); ?>-microdata">
+          <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-microdata" name="<?php echo esc_attr($this->plugin_name); ?>[microdata]" value="1" <?php checked($microdata, 1); ?> />
           <span><?php esc_attr_e('Remove all Microdata', $this->plugin_name); ?></span>
         </label>
       </fieldset>
@@ -157,8 +171,8 @@
       <!-- Remove all RDFa -->
       <fieldset>
         <legend class="screen-reader-text"><span><?php _e('Remove all RDFa', $this->plugin_name); ?></span></legend>
-        <label for="<?php echo $this->plugin_name; ?>-rdfa">
-          <input type="checkbox" id="<?php echo $this->plugin_name; ?>-rdfa" name="<?php echo $this->plugin_name; ?>[rdfa]" value="1" <?php checked($rdfa, 1); ?> />
+        <label for="<?php echo esc_attr($this->plugin_name); ?>-rdfa">
+          <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-rdfa" name="<?php echo esc_attr($this->plugin_name); ?>[rdfa]" value="1" <?php checked($rdfa, 1); ?> />
           <span><?php esc_attr_e('Remove all RDFa', $this->plugin_name); ?></span>
         </label>
       </fieldset>

@@ -70,7 +70,7 @@ class Remove_Schema {
 		if ( defined( 'REMOVE_SCHEMA_VERSION' ) ) {
 			$this->version = REMOVE_SCHEMA_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.6.2';
 		}
 		$this->plugin_name = 'remove-schema';
 

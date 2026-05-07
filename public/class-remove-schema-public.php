@@ -41,6 +41,15 @@ class Remove_Schema_Public {
 	private $version;
 
 	/**
+	* Stored plugin options.
+	*
+	* @since    1.0.0
+	* @access   private
+	* @var      array    $remove_schema_options    The saved plugin options.
+	*/
+	private $remove_schema_options;
+
+	/**
 	* Initialize the class and set its properties.
 	*
 	* @since    1.0.0
@@ -52,6 +61,9 @@ class Remove_Schema_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 		$this->remove_schema_options = get_option($this->plugin_name);
+		if ( ! is_array( $this->remove_schema_options ) ) {
+			$this->remove_schema_options = array();
+		}
 
 	}
 public function apply_page_specific_options(){
@@ -90,14 +102,14 @@ public function apply_page_specific_options(){
 
 	// Remove all Woocommerce JsonLD
 	public function remove_schema_woocommerce_jsonld() {
-		if(!empty($this->remove_schema_options['woocommerce_jsonld']) && class_exists( 'WooCommerce' )){
+		if(!empty($this->remove_schema_options['woocommerce_jsonld']) && class_exists( 'WooCommerce' ) && function_exists( 'WC' )){
 			remove_action( 'wp_footer', array( WC()->structured_data, 'output_structured_data' ), 10 ); // This removes structured data from all frontend pages
 		}
 	}
 
 	// Remove all Woocommerce JsonLD in the mail
 	public function remove_schema_woocommerce_mail_jsonld() {
-		if(!empty($this->remove_schema_options['woocommerce_mail_jsonld']) && class_exists( 'WooCommerce' )){
+		if(!empty($this->remove_schema_options['woocommerce_mail_jsonld']) && class_exists( 'WooCommerce' ) && function_exists( 'WC' )){
 			remove_action( 'woocommerce_email_order_details', array( WC()->structured_data, 'output_email_structured_data' ), 30 ); // This removes structured data from all Emails sent by WooCommerce
 		}
 	}
