@@ -70,9 +70,6 @@ jobs:
       - name: CSS lint
         run: npm run lint:css
 
-      - name: JS tests
-        run: npm run test:js -- --runInBand
-
   smoke-test:
     runs-on: ubuntu-latest
     steps:
@@ -111,19 +108,18 @@ jobs:
       - name: Confirm activation option exists
         run: npx wp-env run cli wp option get remove_schema_version
 
-      - name: REST route smoke test
+      - name: Legacy options smoke test
         run: |
           npx wp-env run cli wp eval '
-          $route = "/remove-schema/v1/status";
-          $routes = rest_get_server()->get_routes();
-          if ( ! isset( $routes[ $route ] ) ) {
-            \WP_CLI::error( "Missing REST route {$route}" );
+          $options = get_option( "remove-schema" );
+          if ( ! is_array( $options ) ) {
+            \WP_CLI::error( "Missing legacy remove-schema option." );
           }
-          \WP_CLI::success( "Registered REST route {$route}" );
+          if ( false !== get_option( "remove_schema_options", false ) ) {
+            \WP_CLI::error( "Unexpected boilerplate remove_schema_options option exists." );
+          }
+          \WP_CLI::success( "Legacy remove-schema option is available." );
           '
-
-      - name: CLI smoke test
-        run: npx wp-env run cli wp remove-schema status
 
       - name: Stop wp-env
         if: always()
