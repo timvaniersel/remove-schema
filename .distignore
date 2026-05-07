@@ -1,0 +1,16 @@
+.editorconfig
+.git
+.github
+.gitignore
+.phpunit.result.cache
+.wp-env.json
+assets/src
+bin
+coverage
+dist
+node_modules
+package-lock.json
+phpcs.xml.dist
+phpstan.neon.dist
+phpunit.xml.dist
+tests
