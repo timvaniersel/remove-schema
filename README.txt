@@ -51,10 +51,13 @@ Yes we can. If we have missed a plugin please create an issue on [Github](https:
 
 == Changelog ==
 
-= 1.5 =
-* Add PHP 8.2 support
+= 1.6.2 =
+* PHP 8.2 support
 
-= 1.4 =
+= 1.6.1 =
+* Improved security
+
+= 1.4.0 =
 * Add Yoast SEO Premium support
 
 = 1.3.4 =
@@ -62,6 +65,7 @@ Yes we can. If we have missed a plugin please create an issue on [Github](https:
 
 = 1.3.3 =
 * Remove review notice
+
 
 = 1.3.2 =
 * Bugfixes - page specific markup wouldn't save if everything was unchecked.
