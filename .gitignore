@@ -5,3 +5,4 @@ vendor
 original
 .phpstan
 .phpunit.cache
+dist
