@@ -47,6 +47,12 @@ You can install Remove Schema at the moment only by downloading it from GitHub a
 = 2.0 =
 * Full rewrite of the plugin
 
+= 1.6.2 =
+* PHP 8.2 support
+
+= 1.6.1 =
+* Improved security
+
 = 1.4 =
 * Add Yoast SEO Premium support
 
