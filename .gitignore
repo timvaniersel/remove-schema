@@ -1,6 +1,8 @@
-
-.DS_Store
 node_modules
-dist
-original
 vendor
+.DS_Store
+.env
+original
+.phpstan
+.phpunit.cache
+dist

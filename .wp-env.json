@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/wp-env.json",
+  "core": null,
+  "phpVersion": "8.2",
+  "mappings": {
+    "wp-content/plugins/remove-schema": "."
+  },
+  "config": {
+    "WP_DEBUG": true,
+    "SCRIPT_DEBUG": true
+  }
+}

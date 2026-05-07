@@ -1,35 +1,114 @@
-# Remove Schema WordPress Plugin
+# Remove Schema
 
-Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site. You can use this plugin on site level and/or on page level.
+Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site.
 
-## Remove Schema
+## Requirements
 
-Remove Schema optionally removes all schema markup from your website.
+- WordPress `6.8+`
+- PHP `8.2+`
+- Node.js `20+`
+- npm `10+`
+- Composer `2+`
 
-You have the option to remove:
+## Quick Start
 
-* All JSON-ld
-* All Microdata
-* All RDFa
+```bash
+composer install
+npm install
+npm run build
+```
 
-And remove plugin/theme specific markup:
+The plugin entrypoint is `remove-schema.php`. Runtime services live in `src/`.
 
-* WooCommerce
-* WooCommerce emails
-* Yoast SEO
-* Schema Pro
-* GeneratePress themes
+## Testing and Verification
 
+Run the PHP test suite:
 
-## Installation
+```bash
+composer test
+```
 
-You can install Remove Schema at the moment only by downloading it from GitHub and uploading it to your WordPress site:
+Run PHP coding standards and static analysis:
 
-1. Upload `remove-schema` directory to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Go to settings and check the boxes of the schema markup that you want removed.
+```bash
+composer lint
+```
 
-## Frequently Asked Questions
+Run the PHP checks individually:
 
-#### Can you add support for a plugin?
-Yes we can, If we have missed a plugin please [create an issue on Github](https://github.com/timvaniersel/remove-schema/issues "Remove Schema Github").
+```bash
+composer phpcs
+composer phpstan
+composer phpunit
+```
+
+Run JavaScript and CSS linting:
+
+```bash
+npm run lint:js
+npm run lint:css
+```
+
+Run WordPress Plugin Check in the local wp-env environment:
+
+```bash
+npm run env:start
+npx wp-env run cli wp plugin install plugin-check --activate
+npx wp-env run cli wp plugin check remove-schema --exclude-directories=original,.phpstan,.phpunit.cache --exclude-files=.DS_Store,.gitignore,phpstan.neon.dist,phpcs.xml.dist,phpunit.xml.dist
+```
+
+Build assets as part of release verification:
+
+```bash
+npm run build
+```
+
+Full local verification:
+
+```bash
+composer test
+composer lint
+npm run lint:js
+npm run lint:css
+npm run env:start
+npx wp-env run cli wp plugin install plugin-check --activate
+npx wp-env run cli wp plugin check remove-schema --exclude-directories=original,.phpstan,.phpunit.cache --exclude-files=.DS_Store,.gitignore,phpstan.neon.dist,phpcs.xml.dist,phpunit.xml.dist
+npm run build
+```
+
+## Export Plugin ZIP
+
+Build assets and create a release ZIP:
+
+```bash
+npm run package:release
+```
+
+Create a ZIP from the current built files without rebuilding assets:
+
+```bash
+npm run package:zip
+```
+
+The generated archive is written to `dist/remove-schema.zip`.
+
+## Project Metadata
+
+- Slug: `remove-schema`
+- Namespace: `TimVanIersel\RemoveSchema`
+- Prefix: `remove_schema`
+- Text domain: `remove-schema`
+- Composer package: `timvaniersel/removeschema`
+- Plugin URI: https://plugin.nl/remove-schema
+
+## Author
+
+- Name: Tim van Iersel
+- Email: tim@plugin.nl
+- URI: https://plugin.nl
+
+## Next Steps
+
+1. Install PHP dependencies with `composer install`.
+2. Install JavaScript dependencies with `npm install`.
+3. Build the admin assets with `npm run build`.

@@ -1,0 +1,14 @@
+parameters:
+  level: 6
+  paths:
+    - src
+    - tests
+  bootstrapFiles:
+    - tests/bootstrap/phpstan-bootstrap.php
+  scanFiles:
+    - vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+  tmpDir: .phpstan
+  treatPhpDocTypesAsCertain: false
+  universalObjectCratesClasses:
+    - WP_REST_Request
+    - WP_REST_Response

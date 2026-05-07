@@ -1,13 +1,13 @@
 === Remove Schema ===
 Contributors: timvaniersel
-Donate link: https://www.buymeacoffee.com/tim
+Donate link: https://buymeacoffee.com/tim
 Tags: schema, schema markup, structured data
-Requires at least: 5.0.0
+Requires at least: 6.8
 Tested up to: 6.9
-Stable tag: 1.6.2
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Requires PHP: 7.4.0
+Requires PHP: 8.2
+Stable tag: 2.0.0
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site.
 
@@ -29,7 +29,6 @@ And remove plugin/theme specific markup:
 * Schema Pro
 * GeneratePress themes
 
-
 == Installation ==
 
 You can install Remove Schema at the moment only by downloading it from GitHub and uploading it to your WordPress site:
@@ -38,13 +37,6 @@ You can install Remove Schema at the moment only by downloading it from GitHub a
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Go to settings and check the boxes of the schema markup that you want removed.
 
-== Frequently Asked Questions ==
-
-= Can you make add support for a plugin =
-
-Yes we can. If we have missed a plugin please create an issue on [GitHub](https://github.com/Plugin-nl/remove-schema "Remove Schema GitHub").
-
-
 == Screenshots ==
 
 1. Admin interface
@@ -52,13 +44,16 @@ Yes we can. If we have missed a plugin please create an issue on [GitHub](https:
 
 == Changelog ==
 
+= 2.0 =
+* Full rewrite of the plugin
+
 = 1.6.2 =
 * PHP 8.2 support
 
 = 1.6.1 =
 * Improved security
 
-= 1.4.0 =
+= 1.4 =
 * Add Yoast SEO Premium support
 
 = 1.3.4 =

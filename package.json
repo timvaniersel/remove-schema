@@ -1,0 +1,45 @@
+{
+  "name": "remove-schema",
+  "version": "2.0.0",
+  "description": "Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site.",
+  "license": "GPL-2.0-or-later",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "files": [
+    "assets/build",
+    "!assets/build/.gitkeep",
+    "composer.json",
+    "languages",
+    "!languages/.gitkeep",
+    "remove-schema.php",
+    "readme.txt",
+    "src",
+    "uninstall.php",
+    "vendor"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run build:admin",
+    "build:admin": "wp-scripts build assets/src/admin/index.js --output-path=assets/build/admin",
+    "clean": "node bin/clean.mjs",
+    "env:start": "wp-env start",
+    "env:stop": "wp-env stop",
+    "env:destroy": "wp-env destroy",
+    "lint:css": "wp-scripts lint-style \"assets/src/**/*.{css,scss}\"",
+    "lint:js": "wp-scripts lint-js assets/src",
+    "package:release": "npm run build && npm run package:zip",
+    "package:zip": "wp-scripts plugin-zip --root-folder=remove-schema && node bin/finalize-plugin-zip.mjs",
+    "start": "wp-scripts start assets/src/admin/index.js --output-path=assets/build/admin"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^11.4.0",
+    "@wordpress/scripts": "^32.0.0"
+  },
+  "homepage": "https://plugin.nl/remove-schema",
+  "author": {
+    "name": "Tim van Iersel",
+    "email": "tim@plugin.nl",
+    "url": "https://plugin.nl"
+  }
+}
