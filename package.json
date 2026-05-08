@@ -33,6 +33,7 @@
     "start": "wp-scripts start assets/src/admin/index.js --output-path=assets/build/admin"
   },
   "devDependencies": {
+    "adm-zip": "^0.5.17",
     "@wordpress/env": "^11.4.0",
     "@wordpress/scripts": "^32.0.0"
   },
