@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "npm run clean && npm run build:admin",
-    "build:admin": "wp-scripts build assets/src/admin/index.js --output-path=assets/build/admin",
+    "build:admin": "wp-scripts build assets/src/admin/index.js --output-path=assets/build/admin && node bin/guard-asset-metadata.mjs",
     "clean": "node bin/clean.mjs",
     "env:start": "wp-env start",
     "env:stop": "wp-env stop",

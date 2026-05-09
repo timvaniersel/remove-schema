@@ -1,4 +1,10 @@
-<?php 
+<?php
+/**
+ * Generated asset metadata.
+ *
+ * @package TimVanIersel\RemoveSchema
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
