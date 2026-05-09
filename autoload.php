@@ -7,6 +7,10 @@
 
 declare(strict_types=1);
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 spl_autoload_register(
 	static function ( string $class_name ): void {
 		$prefix = 'TimVanIersel\\RemoveSchema\\';
