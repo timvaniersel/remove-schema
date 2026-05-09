@@ -8,16 +8,15 @@
     "npm": ">=10.0.0"
   },
   "files": [
+    "autoload.php",
     "assets/build",
     "!assets/build/.gitkeep",
-    "composer.json",
     "languages",
     "!languages/.gitkeep",
     "remove-schema.php",
-    "readme.txt",
+    "README.txt",
     "src",
-    "uninstall.php",
-    "vendor"
+    "uninstall.php"
   ],
   "scripts": {
     "build": "npm run clean && npm run build:admin",

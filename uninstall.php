@@ -11,10 +11,18 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-$remove_schema_autoload = __DIR__ . '/vendor/autoload.php';
+$remove_schema_autoload_loaded = false;
 
-if ( file_exists( $remove_schema_autoload ) ) {
-	require $remove_schema_autoload;
+foreach ( array( 'vendor/autoload.php', 'autoload.php' ) as $remove_schema_autoload ) {
+	$remove_schema_autoload_path = __DIR__ . '/' . $remove_schema_autoload;
 
+	if ( file_exists( $remove_schema_autoload_path ) ) {
+		require $remove_schema_autoload_path;
+		$remove_schema_autoload_loaded = true;
+		break;
+	}
+}
+
+if ( $remove_schema_autoload_loaded ) {
 	TimVanIersel\RemoveSchema\Lifecycle\Uninstaller::uninstall();
 }

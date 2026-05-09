@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="Remove Schema">
-	<description>PHPCS rules for the modern WordPress plugin boilerplate.</description>
+	<description>PHPCS rules for the modern WordPress plugin Remove Schema.</description>
 
 	<file>remove-schema.php</file>
 	<file>uninstall.php</file>

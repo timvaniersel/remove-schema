@@ -116,7 +116,7 @@ jobs:
             \WP_CLI::error( "Missing legacy remove-schema option." );
           }
           if ( false !== get_option( "remove_schema_options", false ) ) {
-            \WP_CLI::error( "Unexpected boilerplate remove_schema_options option exists." );
+            \WP_CLI::error( "Unexpected remove_schema_options option exists." );
           }
           \WP_CLI::success( "Legacy remove-schema option is available." );
           '

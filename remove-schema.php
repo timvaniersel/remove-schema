@@ -28,12 +28,22 @@ define( 'REMOVE_SCHEMA_PATH', plugin_dir_path( __FILE__ ) );
 define( 'REMOVE_SCHEMA_URL', plugin_dir_url( __FILE__ ) );
 define( 'REMOVE_SCHEMA_BASENAME', plugin_basename( __FILE__ ) );
 
-if ( ! file_exists( REMOVE_SCHEMA_PATH . 'vendor/autoload.php' ) ) {
+$remove_schema_autoload_loaded = false;
+
+foreach ( array( 'vendor/autoload.php', 'autoload.php' ) as $remove_schema_autoload ) {
+	$remove_schema_autoload_path = REMOVE_SCHEMA_PATH . $remove_schema_autoload;
+
+	if ( file_exists( $remove_schema_autoload_path ) ) {
+		require $remove_schema_autoload_path;
+		$remove_schema_autoload_loaded = true;
+		break;
+	}
+}
+
+if ( ! $remove_schema_autoload_loaded ) {
 	add_action( 'admin_notices', 'remove_schema_render_missing_autoloader_notice' );
 	return;
 }
-
-require REMOVE_SCHEMA_PATH . 'vendor/autoload.php';
 
 register_activation_hook( __FILE__, array( TimVanIersel\RemoveSchema\Lifecycle\Activator::class, 'activate' ) );
 register_deactivation_hook( __FILE__, array( TimVanIersel\RemoveSchema\Lifecycle\Deactivator::class, 'deactivate' ) );
@@ -41,7 +51,7 @@ register_deactivation_hook( __FILE__, array( TimVanIersel\RemoveSchema\Lifecycle
 TimVanIersel\RemoveSchema\Plugin::boot();
 
 /**
- * Render an admin notice when Composer dependencies have not been installed.
+ * Render an admin notice when no autoloader is available.
  */
 function remove_schema_render_missing_autoloader_notice(): void {
 	if ( ! current_user_can( 'activate_plugins' ) ) {
@@ -52,7 +62,7 @@ function remove_schema_render_missing_autoloader_notice(): void {
 		<p>
 			<?php
 			echo esc_html__(
-				'Remove Schema requires Composer dependencies. Run "composer install" before activating the boilerplate from source.',
+				'Remove Schema is missing its autoloader. Reinstall the plugin or run "composer install" before activating the source checkout.',
 				'remove-schema'
 			);
 			?>
