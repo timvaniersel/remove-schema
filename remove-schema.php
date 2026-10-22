@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Remove Schema
  * Plugin URI:        https://plugin.nl/remove-schema
- * Description:       Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site.
+ * Description:       Remove unwanted structured data from supported WordPress plugins and themes.
  * Version:           2.0.0
  * Requires at least: 6.8
  * Requires PHP:      8.2

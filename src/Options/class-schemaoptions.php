@@ -21,25 +21,19 @@ final class SchemaOptions {
 	public const POST_META_KEY = 'remove_schema_page_specific';
 
 	private const SITE_KEYS = array(
-		'rm_jsonld',
 		'yoast_jsonld',
 		'woocommerce_jsonld',
 		'woocommerce_mail_jsonld',
 		'schema_pro',
 		'generatepress_schema',
 		'remove_hentry_schema',
-		'microdata',
-		'rdfa',
 	);
 
 	private const POST_KEYS = array(
 		'keep_schema',
-		'rm_jsonld',
 		'yoast_jsonld',
 		'woocommerce_jsonld',
 		'schema_pro',
-		'microdata',
-		'rdfa',
 	);
 
 	/**

@@ -3,31 +3,24 @@ Contributors: timvaniersel
 Donate link: https://buymeacoffee.com/tim
 Tags: schema, schema markup, structured data
 Requires at least: 6.8
-Tested up to: 6.9
+Tested up to: 7.1
 Requires PHP: 8.2
 Stable tag: 2.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site.
+Remove unwanted structured data from supported WordPress plugins and themes.
 
 == Description ==
 
-Remove Schema optionally removes all schema markup from your website.
-
-You have the option to remove:
-
-* All JSON-ld
-* All Microdata
-* All RDFa
-
-And remove plugin/theme specific markup:
+Remove Schema disables structured data from supported plugins and themes:
 
 * WooCommerce
 * WooCommerce emails
 * Yoast SEO
 * Schema Pro
 * GeneratePress themes
+* Hentry classes
 
 == Installation ==
 
@@ -46,6 +39,7 @@ You can install Remove Schema at the moment only by downloading it from GitHub a
 
 = 2.0 =
 * Full rewrite of the plugin
+* Remove aggressive schema removal
 
 = 1.6.2 =
 * PHP 8.2 support

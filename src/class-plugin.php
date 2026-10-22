@@ -15,7 +15,6 @@ use TimVanIersel\RemoveSchema\Admin\SettingsPage;
 use TimVanIersel\RemoveSchema\Contracts\Service;
 use TimVanIersel\RemoveSchema\Infrastructure\AssetLocator;
 use TimVanIersel\RemoveSchema\PublicSite\SchemaRemoval;
-use TimVanIersel\RemoveSchema\Schema\MarkupCleaner;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -77,7 +76,7 @@ final class Plugin {
 			new SettingsPage( $this->context ),
 			new PostEditor( $this->context ),
 			new AdminAssets( $this->assets ),
-			new SchemaRemoval( $this->context, new MarkupCleaner() ),
+			new SchemaRemoval( $this->context ),
 		);
 	}
 }

@@ -9,4 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-return array('dependencies' => array(), 'version' => '2441460bba472c8e8070');
+return array(
+	'dependencies' => array(
+
+	),
+	'version' => '40e9772a919dd32cb2c4'
+);

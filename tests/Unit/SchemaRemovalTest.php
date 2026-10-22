@@ -14,7 +14,6 @@ use ReflectionProperty;
 use TimVanIersel\RemoveSchema\Options\SchemaOptions;
 use TimVanIersel\RemoveSchema\PluginContext;
 use TimVanIersel\RemoveSchema\PublicSite\SchemaRemoval;
-use TimVanIersel\RemoveSchema\Schema\MarkupCleaner;
 
 /**
  * Tests for schema removal callbacks.
@@ -72,7 +71,7 @@ final class SchemaRemovalTest extends TestCase {
 			'remove-schema',
 			'remove-schema'
 		);
-		$removal = new SchemaRemoval( $context, new MarkupCleaner() );
+		$removal = new SchemaRemoval( $context );
 
 		$property = new ReflectionProperty( $removal, 'options' );
 		$property->setValue( $removal, SchemaOptions::normalize_site_options( $options ) );

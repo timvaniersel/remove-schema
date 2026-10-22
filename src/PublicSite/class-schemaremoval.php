@@ -12,7 +12,6 @@ namespace TimVanIersel\RemoveSchema\PublicSite;
 use TimVanIersel\RemoveSchema\Contracts\Service;
 use TimVanIersel\RemoveSchema\Options\SchemaOptions;
 use TimVanIersel\RemoveSchema\PluginContext;
-use TimVanIersel\RemoveSchema\Schema\MarkupCleaner;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -33,11 +32,9 @@ final class SchemaRemoval implements Service {
 	 * Constructor.
 	 *
 	 * @param PluginContext $context Plugin context.
-	 * @param MarkupCleaner $cleaner Markup cleaner.
 	 */
 	public function __construct(
-		private readonly PluginContext $context,
-		private readonly MarkupCleaner $cleaner
+		private readonly PluginContext $context
 	) {
 	}
 
@@ -50,7 +47,6 @@ final class SchemaRemoval implements Service {
 		add_action( 'init', array( $this, 'applyPageSpecificOptions' ), 9 );
 		add_action( 'init', array( $this, 'removeWooCommerceJsonLd' ) );
 		add_action( 'init', array( $this, 'removeWooCommerceMailJsonLd' ) );
-		add_action( 'init', array( $this, 'setUpBuffer' ) );
 
 		add_filter( 'wp_schema_pro_schema_enabled', array( $this, 'removeSchemaPro' ) );
 		add_filter( 'wp_schema_pro_global_schema_enabled', array( $this, 'removeSchemaPro' ) );
@@ -166,35 +162,6 @@ final class SchemaRemoval implements Service {
 		}
 
 		return array_values( array_diff( $classes, array( 'hentry' ) ) );
-	}
-
-	/**
-	 * Start output buffering for aggressive markup removal.
-	 *
-	 * @return void
-	 */
-	public function setUpBuffer(): void {
-		if ( is_feed() || is_admin() ) {
-			return;
-		}
-
-		$options = $this->effectiveOptions();
-
-		if ( empty( $options['microdata'] ) && empty( $options['rdfa'] ) && empty( $options['rm_jsonld'] ) ) {
-			return;
-		}
-
-		ob_start( array( $this, 'filterPage' ) );
-	}
-
-	/**
-	 * Buffer callback.
-	 *
-	 * @param string $html Buffered HTML.
-	 * @return string
-	 */
-	public function filterPage( string $html ): string {
-		return $this->cleaner->clean( $html, $this->effectiveOptions() );
 	}
 
 	/**

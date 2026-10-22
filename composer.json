@@ -1,21 +1,21 @@
 {
   "name": "timvaniersel/removeschema",
-  "description": "Remove all Schema Markup / Structured data (Microdata, RDFa and/or JSON-ld) that you don’t want on your site.",
+  "description": "Remove unwanted structured data from supported WordPress plugins and themes.",
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
   "require": {
     "php": "^8.2"
   },
   "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^1.1",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.2.1",
     "phpcompatibility/phpcompatibility-wp": "^2.1",
-    "phpstan/phpstan": "^1.12",
-    "phpstan/phpstan-deprecation-rules": "^1.2",
-    "phpunit/phpunit": "^10.5",
-    "sirbrillig/phpcs-variable-analysis": "^2.12",
-    "squizlabs/php_codesniffer": "^3.10",
-    "wp-coding-standards/wpcs": "^3.1",
-    "php-stubs/wordpress-stubs": "^6.8"
+    "phpstan/phpstan": "^2.3",
+    "phpstan/phpstan-deprecation-rules": "^2.0.5",
+    "phpunit/phpunit": "^11.5.55",
+    "sirbrillig/phpcs-variable-analysis": "^3.0",
+    "squizlabs/php_codesniffer": "^3.13.6",
+    "wp-coding-standards/wpcs": "^3.4.1",
+    "php-stubs/wordpress-stubs": "^7.1"
   },
   "autoload": {
     "classmap": [
@@ -40,6 +40,9 @@
     ]
   },
   "config": {
+    "platform": {
+      "php": "8.2.0"
+    },
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true
     },
