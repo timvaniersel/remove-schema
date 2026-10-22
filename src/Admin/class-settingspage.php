@@ -129,11 +129,6 @@ final class SettingsPage implements Service {
 				<a href="https://schema.org" target="_blank" rel="noopener noreferrer">Schema.org</a>.
 			</p>
 
-			<h2 class="nav-tab-wrapper">
-				<a href="#plugin-theme" class="nav-tab nav-tab-active"><?php esc_html_e( 'Plugin/Theme schema removal', 'remove-schema' ); ?></a>
-				<a href="#aggressive" class="nav-tab"><?php esc_html_e( 'Aggressive schema removal', 'remove-schema' ); ?></a>
-			</h2>
-
 			<form action="options.php" method="post">
 				<?php
 				settings_fields( self::PAGE_SLUG );
@@ -158,15 +153,6 @@ final class SettingsPage implements Service {
 
 					<?php $this->renderCheckbox( 'generatepress_schema', __( 'Remove GeneratePress schema', 'remove-schema' ), $options ); ?>
 					<?php $this->renderCheckbox( 'remove_hentry_schema', __( 'Remove Hentry schema', 'remove-schema' ), $options ); ?>
-				</div>
-
-				<div id="aggressive" class="wrap columns-2 remove-schema-metaboxes hidden">
-					<h2 class="text-red"><?php esc_html_e( 'Aggressive schema removal', 'remove-schema' ); ?></h2>
-					<p><?php esc_html_e( 'Use when other options are not working. Because this may cause problems and can slow down your website when you do not use caching.', 'remove-schema' ); ?></p>
-
-					<?php $this->renderCheckbox( 'rm_jsonld', __( 'Remove all JSON-LD', 'remove-schema' ), $options ); ?>
-					<?php $this->renderCheckbox( 'microdata', __( 'Remove all Microdata', 'remove-schema' ), $options ); ?>
-					<?php $this->renderCheckbox( 'rdfa', __( 'Remove all RDFa', 'remove-schema' ), $options ); ?>
 				</div>
 
 				<?php submit_button( __( 'Save all changes', 'remove-schema' ) ); ?>

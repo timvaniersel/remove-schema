@@ -24,15 +24,12 @@ final class SchemaOptionsTest extends TestCase {
 	public function testMissingSiteOptionsNormalizeToDisabledKeys(): void {
 		$options = SchemaOptions::normalize_site_options( false );
 
-		self::assertSame( 0, $options['rm_jsonld'] );
 		self::assertSame( 0, $options['yoast_jsonld'] );
 		self::assertSame( 0, $options['woocommerce_jsonld'] );
 		self::assertSame( 0, $options['woocommerce_mail_jsonld'] );
 		self::assertSame( 0, $options['schema_pro'] );
 		self::assertSame( 0, $options['generatepress_schema'] );
 		self::assertSame( 0, $options['remove_hentry_schema'] );
-		self::assertSame( 0, $options['microdata'] );
-		self::assertSame( 0, $options['rdfa'] );
 	}
 
 	/**
@@ -53,7 +50,7 @@ final class SchemaOptionsTest extends TestCase {
 		self::assertSame( 1, $options['yoast_jsonld'] );
 		self::assertSame( 1, $options['woocommerce_mail_jsonld'] );
 		self::assertSame( 1, $options['generatepress_schema'] );
-		self::assertSame( 0, $options['rm_jsonld'] );
+		self::assertSame( 0, $options['woocommerce_jsonld'] );
 		self::assertArrayNotHasKey( 'unrelated_future_setting', $options );
 	}
 
@@ -65,22 +62,22 @@ final class SchemaOptionsTest extends TestCase {
 	public function testPostOverridesForceRemovalsOn(): void {
 		$site = SchemaOptions::normalize_site_options(
 			array(
-				'rdfa' => 1,
+				'generatepress_schema' => 1,
 			)
 		);
 		$post = SchemaOptions::normalize_post_options(
 			array(
-				'rm_jsonld'          => 1,
+				'yoast_jsonld'       => 1,
 				'woocommerce_jsonld' => 1,
 			)
 		);
 
 		$options = SchemaOptions::apply_post_overrides( $site, $post );
 
-		self::assertSame( 1, $options['rdfa'] );
-		self::assertSame( 1, $options['rm_jsonld'] );
+		self::assertSame( 1, $options['generatepress_schema'] );
+		self::assertSame( 1, $options['yoast_jsonld'] );
 		self::assertSame( 1, $options['woocommerce_jsonld'] );
-		self::assertSame( 0, $options['yoast_jsonld'] );
+		self::assertSame( 0, $options['schema_pro'] );
 	}
 
 	/**
@@ -91,9 +88,9 @@ final class SchemaOptionsTest extends TestCase {
 	public function testKeepSchemaDisablesAllRemovals(): void {
 		$site = SchemaOptions::normalize_site_options(
 			array(
-				'rdfa'         => 1,
-				'rm_jsonld'    => 1,
-				'yoast_jsonld' => 1,
+				'generatepress_schema' => 1,
+				'woocommerce_jsonld'   => 1,
+				'yoast_jsonld'         => 1,
 			)
 		);
 		$post = SchemaOptions::normalize_post_options(
@@ -105,5 +102,28 @@ final class SchemaOptionsTest extends TestCase {
 		$options = SchemaOptions::apply_post_overrides( $site, $post );
 
 		self::assertSame( SchemaOptions::normalize_site_options( array() ), $options );
+	}
+
+	/**
+	 * Test that previously saved aggressive options cannot be re-enabled.
+	 *
+	 * @return void
+	 */
+	public function testLegacyAggressiveOptionsAreDiscarded(): void {
+		$legacy = array(
+			'rm_jsonld'    => 1,
+			'microdata'    => 1,
+			'rdfa'         => 1,
+			'yoast_jsonld' => 1,
+		);
+		$site   = SchemaOptions::sanitize_site_options( $legacy );
+		$post   = SchemaOptions::sanitize_post_options( $legacy );
+
+		foreach ( array( $site, $post, SchemaOptions::apply_post_overrides( $legacy, $legacy ) ) as $options ) {
+			self::assertArrayNotHasKey( 'rm_jsonld', $options );
+			self::assertArrayNotHasKey( 'microdata', $options );
+			self::assertArrayNotHasKey( 'rdfa', $options );
+			self::assertSame( 1, $options['yoast_jsonld'] );
+		}
 	}
 }

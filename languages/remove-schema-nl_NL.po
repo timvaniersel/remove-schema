@@ -38,11 +38,6 @@ msgstr ""
 msgid "Plugin/Theme schema removal"
 msgstr "Plugin/Thema schema verwijderen"
 
-#: admin/partials/remove-schema-admin-display.php:26
-#: admin/partials/remove-schema-admin-display.php:139
-msgid "Aggressive schema removal"
-msgstr "Agressieve schema-verwijdering"
-
 #: admin/partials/remove-schema-admin-display.php:74
 #: admin/partials/remove-schema-admin-display.php:77
 #: admin/partials/remove-schema-post-editor-display.php:52
@@ -84,24 +79,6 @@ msgstr "Hentry schema verwijderen"
 #: admin/partials/remove-schema-admin-display.php:130
 msgid "Remove Hentry schema"
 msgstr "Hentry schema verwijderen"
-
-#: admin/partials/remove-schema-admin-display.php:143
-#: admin/partials/remove-schema-admin-display.php:146
-#: admin/partials/remove-schema-post-editor-display.php:48
-msgid "Remove all JSON-LD"
-msgstr "Verwijder alle JSON-LD"
-
-#: admin/partials/remove-schema-admin-display.php:153
-#: admin/partials/remove-schema-admin-display.php:156
-#: admin/partials/remove-schema-post-editor-display.php:66
-msgid "Remove all Microdata"
-msgstr "Verwijder alle Microdata"
-
-#: admin/partials/remove-schema-admin-display.php:162
-#: admin/partials/remove-schema-admin-display.php:165
-#: admin/partials/remove-schema-post-editor-display.php:69
-msgid "Remove all RDFa"
-msgstr "Verwijder alle RDFa schema markup"
 
 #: admin/partials/remove-schema-admin-display.php:171
 msgid "Save all changes"
@@ -192,11 +169,8 @@ msgid "https://plugin.nl/en/remove-schema-plugin/"
 msgstr "https://plugin.nl/remove-schema-plugin/"
 
 #. Description of the plugin/theme
-msgid ""
-"Remove all Microdata, RDFa and/or JSON-ld that you don’t want on your page."
-msgstr ""
-"Verwijder alle Microdata, RDFa en/of JSON-ld schema markup die je niet op "
-"jouw pagina of website wilt hebben."
+msgid "Remove unwanted structured data from supported WordPress plugins and themes."
+msgstr "Verwijder ongewenste gestructureerde gegevens van ondersteunde WordPress-plugins en thema’s."
 
 #. Author of the plugin/theme
 msgid "Plugin.nl"

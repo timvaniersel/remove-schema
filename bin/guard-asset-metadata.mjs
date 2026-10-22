@@ -35,7 +35,10 @@ const assetMetadataFiles = await findAssetMetadataFiles( buildDirectory );
 
 await Promise.all(
 	assetMetadataFiles.map( async ( assetMetadataFile ) => {
-		const contents = await readFile( assetMetadataFile, 'utf8' );
+		const contents = ( await readFile( assetMetadataFile, 'utf8' ) ).replace(
+			/[\t ]+$/gm,
+			''
+		);
 
 		if ( contents.includes( "defined( 'ABSPATH' )" ) ) {
 			return;

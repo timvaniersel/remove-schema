@@ -85,7 +85,6 @@ final class PostEditor implements Service {
 		</p>
 
 		<div class="remove-schema-post-options<?php echo ! empty( $options['keep_schema'] ) ? ' is-disabled' : ''; ?>">
-			<?php $this->renderPostCheckbox( 'rm_jsonld', __( 'Remove all JSON-LD', 'remove-schema' ), $options ); ?>
 			<?php if ( $this->isPluginActive( 'wordpress-seo/wp-seo.php' ) || $this->isPluginActive( 'wordpress-seo-premium/wp-seo-premium.php' ) ) : ?>
 				<?php $this->renderPostCheckbox( 'yoast_jsonld', __( 'Remove Yoast JSON-LD', 'remove-schema' ), $options ); ?>
 			<?php endif; ?>
@@ -95,8 +94,6 @@ final class PostEditor implements Service {
 			<?php if ( $this->isPluginActive( 'wp-schema-pro/wp-schema-pro.php' ) ) : ?>
 				<?php $this->renderPostCheckbox( 'schema_pro', __( 'Remove Schema pro JSON-LD', 'remove-schema' ), $options ); ?>
 			<?php endif; ?>
-			<?php $this->renderPostCheckbox( 'microdata', __( 'Remove all Microdata', 'remove-schema' ), $options ); ?>
-			<?php $this->renderPostCheckbox( 'rdfa', __( 'Remove all RDFa', 'remove-schema' ), $options ); ?>
 		</div>
 		<?php
 	}
