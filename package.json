@@ -1,6 +1,6 @@
 {
   "name": "remove-schema",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Remove unwanted structured data from supported WordPress plugins and themes.",
   "license": "GPL-2.0-or-later",
   "engines": {

@@ -3,7 +3,7 @@
  * Plugin Name:       Remove Schema
  * Plugin URI:        https://plugin.nl/remove-schema
  * Description:       Remove unwanted structured data from supported WordPress plugins and themes.
- * Version:           2.0.1
+ * Version:           2.0.2
  * Requires at least: 6.8
  * Requires PHP:      8.2
  * Author:            Tim van Iersel
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'REMOVE_SCHEMA_VERSION', '2.0.1' );
+define( 'REMOVE_SCHEMA_VERSION', '2.0.2' );
 define( 'REMOVE_SCHEMA_FILE', __FILE__ );
 define( 'REMOVE_SCHEMA_PATH', plugin_dir_path( __FILE__ ) );
 define( 'REMOVE_SCHEMA_URL', plugin_dir_url( __FILE__ ) );

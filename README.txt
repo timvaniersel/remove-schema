@@ -5,7 +5,7 @@ Tags: schema, schema markup, structured data
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,9 +37,12 @@ You can install Remove Schema at the moment only by downloading it from GitHub a
 
 == Changelog ==
 
+= 2.0.2 =
+* Remove aggressive schema removal
+
 = 2.0 =
 * Full rewrite of the plugin
-* Remove aggressive schema removal
+
 
 = 1.6.2 =
 * PHP 8.2 support

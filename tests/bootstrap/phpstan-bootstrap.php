@@ -24,7 +24,7 @@ if ( ! function_exists( 'plugin_basename' ) ) {
 }
 
 if ( ! defined( 'REMOVE_SCHEMA_VERSION' ) ) {
-	define( 'REMOVE_SCHEMA_VERSION', '2.0.1' );
+	define( 'REMOVE_SCHEMA_VERSION', '2.0.2' );
 }
 
 if ( ! defined( 'REMOVE_SCHEMA_FILE' ) ) {

@@ -163,3 +163,4 @@ jobs:
         with:
           build-dir: plugin-check-build/remove-schema
           include-experimental: 'true'
+          strict: 'true'
